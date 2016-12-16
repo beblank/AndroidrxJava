@@ -19,6 +19,7 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import rx.functions.Func1;
 
 public class Part1Activity extends AppCompatActivity {
 
@@ -67,6 +68,13 @@ public class Part1Activity extends AppCompatActivity {
         @Override
         public void call(String s) {
             txtPart1.setText(s);
+        }
+    };
+
+    Func1<String, String> toUpperCaseMap = new Func1<String, String>(){
+        @Override
+        public String call(String s) {
+            return s.toUpperCase();
         }
     }
 
