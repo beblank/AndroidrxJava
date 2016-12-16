@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.adityahadiwijaya.androidrxjava.part1.Part1Activity;
+import com.example.adityahadiwijaya.androidrxjava.part2.Part2Activity;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void wireUI(){
         setTapListener(R.id.btnPart1);
+        setTapListener(R.id.btnPart2);
     }
 
     private void setTapListener(int viewId){
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (viewId){
             case R.id.btnPart1:
                 launchIntent = new Intent(this, Part1Activity.class);
+                break;
+            case R.id.btnPart2:
+                launchIntent = new Intent(this, Part2Activity.class);
                 break;
         }
 
