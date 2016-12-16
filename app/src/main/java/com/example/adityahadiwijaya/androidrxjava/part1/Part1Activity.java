@@ -18,6 +18,7 @@ import org.w3c.dom.Text;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 public class Part1Activity extends AppCompatActivity {
 
@@ -61,6 +62,13 @@ public class Part1Activity extends AppCompatActivity {
             Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
         }
     };
+
+    Action1<String> textViewOnNextAction = new Action1<String>(){
+        @Override
+        public void call(String s) {
+            txtPart1.setText(s);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
