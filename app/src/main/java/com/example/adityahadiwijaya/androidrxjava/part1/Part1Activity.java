@@ -64,26 +64,7 @@ public class Part1Activity extends AppCompatActivity {
         }
     };
 
-    Action1<String> textViewOnNextAction = new Action1<String>(){
-        @Override
-        public void call(String s) {
-            txtPart1.setText(s);
-        }
-    };
 
-    Func1<String, String> toUpperCaseMap = new Func1<String, String>(){
-        @Override
-        public String call(String s) {
-            return s.toUpperCase();
-        }
-    };
-
-    Action1<String> toastOnNextAction = new Action1<String>() {
-        @Override
-        public void call(String s) {
-            Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,11 +81,7 @@ public class Part1Activity extends AppCompatActivity {
         observable.subscribe(textViewSubscriber);
         observable.subscribe(toastSubscriber);
 
-        Observable<String> singleObservable = Observable.just("Hello, World!");
 
-        singleObservable.observeOn(AndroidSchedulers.mainThread())
-                .map(toUpperCaseMap)
-                .subscribe(textViewOnNextAction);
 
     }
 
