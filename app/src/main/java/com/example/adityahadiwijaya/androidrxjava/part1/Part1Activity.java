@@ -76,7 +76,7 @@ public class Part1Activity extends AppCompatActivity {
         public String call(String s) {
             return s.toUpperCase();
         }
-    }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +92,13 @@ public class Part1Activity extends AppCompatActivity {
 
         observable.subscribe(textViewSubscriber);
         observable.subscribe(toastSubscriber);
+
+        Observable<String> singleObservable = Observable.just("Hello, World!");
+
+        singleObservable.observeOn(AndroidSchedulers.mainThread())
+                .map(toUpperCaseMap)
+                .subscribe(textViewOnNextAction);
+
     }
 
 }
