@@ -78,6 +78,13 @@ public class Part1Activity extends AppCompatActivity {
         }
     };
 
+    Action1<String> toastOnNextAction = new Action1<String>() {
+        @Override
+        public void call(String s) {
+            Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
