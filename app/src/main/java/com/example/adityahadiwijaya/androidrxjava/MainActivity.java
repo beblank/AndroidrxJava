@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void wireUI(){
         setTapListener(R.id.btnPart1);
         setTapListener(R.id.btnPart2);
+        setTapListener(R.id.btnPart3);
     }
 
     private void setTapListener(int viewId){

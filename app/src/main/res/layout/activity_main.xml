@@ -21,4 +21,10 @@
         android:text="Part 2"
         android:layout_below="@+id/btnPart1"
         />
+    <Button
+        style="@style/Rxbutton"
+        android:id="@+id/btnPart3"
+        android:text="Part 3"
+        android:layout_below="@+id/btnPart2"
+        />
 </RelativeLayout>
