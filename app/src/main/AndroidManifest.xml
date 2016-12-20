@@ -20,6 +20,8 @@
             android:label="@string/title_activity_part1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".part2.Part2Activity"></activity>
+        <activity android:name=".part3.Part3Activity"></activity>
+        <activity android:name=".part4.Part4Activity"></activity>
     </application>
 
 </manifest>
