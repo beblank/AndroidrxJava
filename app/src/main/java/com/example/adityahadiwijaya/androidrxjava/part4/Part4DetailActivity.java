@@ -15,7 +15,7 @@ import com.example.adityahadiwijaya.androidrxjava.part4.utils.OnRVClickListener;
  * Created by adityahadiwijaya on 12/19/16.
  */
 
-public class Part4Activity extends AppCompatActivity implements OnRVClickListener {
+public class Part4DetailActivity extends AppCompatActivity implements OnRVClickListener {
 
     private final static String TAG = "Dodol";
     private RecyclerView recyclerView;

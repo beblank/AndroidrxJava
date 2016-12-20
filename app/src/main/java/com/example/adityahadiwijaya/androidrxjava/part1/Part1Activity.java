@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.example.adityahadiwijaya.androidrxjava.R;
 
 import org.w3c.dom.Text;
-
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
