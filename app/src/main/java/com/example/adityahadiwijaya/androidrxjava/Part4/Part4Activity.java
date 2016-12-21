@@ -36,6 +36,7 @@ public class Part4Activity extends AppCompatActivity implements OnRVClickListene
 
     @Override
     public void onItemClicked(String username) {
-        Log.i(TAG, "onItemClicked: ");
+        startActivity(Part4DetailActivity.from(this, username));
+
     }
 }

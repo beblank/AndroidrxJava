@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.adityahadiwijaya.androidrxjava.R;
+import com.example.adityahadiwijaya.androidrxjava.part4.utils.GitHubRepoAdapter;
 import com.example.adityahadiwijaya.androidrxjava.part4.utils.GitHubUsersAdapter;
 import com.example.adityahadiwijaya.androidrxjava.part4.utils.GitHubWrapper;
 import com.example.adityahadiwijaya.androidrxjava.part4.utils.OnRVClickListener;
@@ -21,7 +22,7 @@ public class Part4DetailActivity extends AppCompatActivity{
 
     private final static String TAG = "Dodol";
     private final static String USER_KEY = "user";
-    private RecyclerView recyclerView;
+    private RecyclerView reposList;
     private String requestedUser;
 
     public static Intent from (Context context, String username){
@@ -42,6 +43,11 @@ public class Part4DetailActivity extends AppCompatActivity{
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
+        GitHubRepoAdapter adapter = new GitHubRepoAdapter();
+        GitHubWrapper.getReposForUsersInto(requestedUser, adapter);
 
+        reposList = (RecyclerView)findViewById(R.id.reposList);
+        reposList.setLayoutManager(layoutManager);
+        reposList.setAdapter(adapter);
     }
 }
