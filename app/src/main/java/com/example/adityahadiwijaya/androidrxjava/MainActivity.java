@@ -9,6 +9,7 @@ import com.example.adityahadiwijaya.androidrxjava.part4.Part4Activity;
 import com.example.adityahadiwijaya.androidrxjava.part1.Part1Activity;
 import com.example.adityahadiwijaya.androidrxjava.part2.Part2Activity;
 import com.example.adityahadiwijaya.androidrxjava.part3.Part3Activity;
+import com.example.adityahadiwijaya.androidrxjava.part5.Part5Activity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setTapListener(R.id.btnPart2);
         setTapListener(R.id.btnPart3);
         setTapListener(R.id.btnPart4);
+        setTapListener(R.id.btnPart5);
     }
 
     private void setTapListener(int viewId){
@@ -51,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnPart4:
                 launchIntent = new Intent(this, Part4Activity.class);
+                break;
+            case R.id.btnPart5:
+                launchIntent = new Intent(this, Part5Activity.class);
                 break;
         }
 
