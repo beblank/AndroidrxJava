@@ -6,12 +6,12 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.adityahadiwijaya.androidrxjava.R;
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action;
 import rx.functions.Action0;
 import rx.functions.Action1;
 
@@ -19,7 +19,7 @@ import rx.functions.Action1;
  * Created by adityahadiwijaya on 12/19/16.
  */
 
-public class Part5Activity extends AppCompatActivity {
+public class Part5Activity extends RxAppCompatActivity {
 
     private TextView textEmittedNumber;
     private static final String TAG = "NightObserver";
@@ -40,12 +40,13 @@ public class Part5Activity extends AppCompatActivity {
         Log.d(TAG, "Night gathers, and now my watch begins");
         Observable.interval(1, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .subscribe(this.logOnNext, this.logOnError, this.logOnComplete);
     }
 
-    Action1<Long> logOnNext = new Action1<Long>() {
+    Action1<Object> logOnNext = new Action1<Object>() {
         @Override
-        public void call(Long time) {
+        public void call(Object time) {
             textEmittedNumber.setText(String.valueOf(time));
             Log.d(TAG, "Nothing bad happened for " + time + " seconds");
         }
